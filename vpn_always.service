@@ -1,0 +1,14 @@
+[Unit]
+Description=VPN always on
+After=network-online.target
+
+[Service]
+ExecStart=/bin/bash /home/REPLACE_USER/scripts/vpn_always.sh
+WorkingDirectory=/home/REPLACE_USER/scripts/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=REPLACE_USER
+
+[Install]
+WantedBy=multi-user.target
