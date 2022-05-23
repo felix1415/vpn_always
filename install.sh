@@ -29,7 +29,7 @@ sudo systemctl start vpn_always.service
 
 
 #for the bashrc
-if [ $( ps aux | grep "sudo openvpn /etc/openvpn/ovpn_udp/uk2153" | wc -l) -eq 2 ];
+if [ $( ps aux | grep "sudo openvpn /etc/openvpn/ovpn_udp/$VPN_SERVER" | wc -l) -eq 2 ];
 then
     IP_ADDR_NOW=$(host myip.opendns.com resolver1.opendns.com | grep "myip.opendns.com has" | awk '{print $4}')
     echo "Connected to VPN using public IP $IP_ADDR_NOW"
